@@ -1,0 +1,102 @@
+
+//P.S: How can one confirm that the copied data is the same as the original data ?What would be the check points ?
+//Imagine that data from table is of the form : List<Map<String,String>>
+
+
+package assignments;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class SecondAssignment {
+
+	public static void main(String[] args) {
+		
+		
+		SecondAssignment duplicate = new SecondAssignment();
+	        
+		  // table1 
+	        List<Map<String, String>> table1 = new ArrayList<>();
+	        Map<String, String> record1 = new HashMap<>();
+	        record1.put("Jharkhand", "A,20,B,49,C,60");
+	        table1.add(record1);
+	        
+	        Map<String, String> record2 = new HashMap<>();
+	        record2.put("Bengal", "A,30,B,21,C,54");
+	        table1.add(record2);
+	        
+	        Map<String, String> record3 = new HashMap<>();
+	        record3.put("Orissa", "");
+	        table1.add(record3);
+	        
+	        // table2 
+	        List<Map<String, String>> table2 = new ArrayList<>();
+	        Map<String, String> record4 = new HashMap<>();
+	        record4.put("Jharkhand", "A,20,B,49,C,60");
+	        table2.add(record4);
+	        
+	        Map<String, String> record5 = new HashMap<>();
+	        record5.put("Bengal", "A,30,B,21,C,54");
+	        table2.add(record5);
+	        
+	        Map<String, String> record6 = new HashMap<>();
+	        record6.put("Orissa", "");
+	        table2.add(record6);
+	        
+	        
+	        if (table1.size() != table2.size()) {
+	            System.out.println("table1 does not match table2");
+	            return;
+	        }
+	        
+	    
+	        duplicate.compareTables(table1, table2);
+		
+		
+
+	}
+	public boolean compareTables(List<Map<String, String>> table1, List<Map<String, String>> table2) {
+        
+        if (table1.size() != table2.size()) {
+            System.out.println("table1 does not match table2");
+            return false;
+    
+        }
+        
+        for (int i = 0; i < table1.size(); i++) {
+            Map<String, String> record1 = table1.get(i);
+            Map<String, String> record2 = table2.get(i);
+            
+            if (!compareRecords(record1, record2)) {
+            	 System.out.println("Not equal at index " + i + ": Keys mismatch between table1 and table2");
+                
+                return false;
+            }
+        }
+        
+        System.out.println("Data of table1 and table2 are equal");
+        return true;
+        
+        
+	}
+	
+	private boolean compareRecords(Map<String, String> record1, Map<String, String> record2) {
+      
+        if (!record1.keySet().equals(record2.keySet())) {
+            return false;
+        }
+        
+       
+        for (String key : record1.keySet()) {
+            if (!record1.get(key).equals(record2.get(key))) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+	
+
+}
