@@ -1,9 +1,12 @@
 
+package assignments;
+
+
 //P.S: How can one confirm that the copied data is the same as the original data ?What would be the check points ?
 //Imagine that data from table is of the form : List<Map<String,String>>
 
 
-package assignments;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,41 +31,63 @@ public class SecondAssignment {
 
 	        table1.add(record1);
 	        
+	        
+	        
+	        
+	        
 	        Map<String, String> record2 = new HashMap<>();
 	        record2.put("person1", "Mumbai");
 	        record2.put("person2", "Pune");
-	        record2.put("person3", "Mumbai");
+	        record2.put("person3", "Nagpur");
 	        table1.add(record2);
 	        
 	        Map<String, String> record3 = new HashMap<>();
-	        record3.put("Orissa", "");
+	        record3.put("person1", "Japan");
 	        table1.add(record3);
+	        
+	        
+	        
+	        int RecordsInTable1 = 0;
+	        for (int i = 0; i < table1.size(); i++) {
+	            Map<String, String> map = table1.get(i);
+	            int recordCount = map.size();
+	            RecordsInTable1 += recordCount;
+	            
+	        }
+
 	        
 	        // table2 
 	        List<Map<String, String>> table2 = new ArrayList<>();
 	        Map<String, String> record4 = new HashMap<>();
-	        record4.put("delhi", "A,20,B,49,C,60");
+	       record4.put("person1", "Dhanbad");
+             record4.put("person2","Ranchi");
 
-                 record4.put("Jharkhand", "A,20,B,49,C,60");
-                 record4.put("Jharkhand", "A,20,B,49,C,60");
+              record4.put("person3", "Ranchi");
 	        table2.add(record4);
 	        
 	        Map<String, String> record5 = new HashMap<>();
-	     record4.put("goa", "A,20,B,49,C,60");
-
-                 record4.put("Jharkhand", "A,20,B,49,C,60");
-                 record4.put("Jharkhand", "A,20,B,49,C,60");
+	     record5.put("person1", "Mumbai");
+	        record5.put("person2", "Pune");
+	        record5.put("person3", "Nagpur");
 	        table2.add(record5);
 	        
 	        Map<String, String> record6 = new HashMap<>();
-	   record4.put("hyderbad", "A,20,B,49,C,60");
+	   record6.put("person1", "Japan");
+//	  
 
-                 record4.put("Jharkhand", "A,20,B,49,C,60");
-                 record4.put("Jharkhand", "A,20,B,49,C,60");
+                 
 	        table2.add(record6);
 	        
+	        int RecordsInTable2 = 0;
+	        for (int i = 0; i < table2.size(); i++) {
+	            Map<String, String> map = table2.get(i);
+	            int recordCount = map.size();
+	            RecordsInTable2 += recordCount;
+	          
+	        }
 	        
-	        if (table1.size() != table2.size()) {    //need change
+	        
+	        if (RecordsInTable1!= RecordsInTable2) {    
 	            System.out.println("table1 does not match table2");
 	            return;
 	        }
