@@ -20,11 +20,18 @@ public class SecondAssignment {
 		  // table1 
 	        List<Map<String, String>> table1 = new ArrayList<>();
 	        Map<String, String> record1 = new HashMap<>();
-	        record1.put("Jharkhand", "A,20,B,49,C,60");
+	        record1.put("person1", "Dhanbad");
+             record1.put("person2","Ranchi");
+
+              record1.put("person3", "Ranchi");
+
+
 	        table1.add(record1);
 	        
 	        Map<String, String> record2 = new HashMap<>();
-	        record2.put("Bengal", "A,30,B,21,C,54");
+	        record2.put("person1", "Mumbai");
+	        record2.put("person2", "Pune");
+	        record2.put("person3", "Mumbai");
 	        table1.add(record2);
 	        
 	        Map<String, String> record3 = new HashMap<>();
@@ -34,19 +41,28 @@ public class SecondAssignment {
 	        // table2 
 	        List<Map<String, String>> table2 = new ArrayList<>();
 	        Map<String, String> record4 = new HashMap<>();
-	        record4.put("Jharkhand", "A,20,B,49,C,60");
+	        record4.put("delhi", "A,20,B,49,C,60");
+
+                 record4.put("Jharkhand", "A,20,B,49,C,60");
+                 record4.put("Jharkhand", "A,20,B,49,C,60");
 	        table2.add(record4);
 	        
 	        Map<String, String> record5 = new HashMap<>();
-	        record5.put("Bengal", "A,30,B,21,C,54");
+	     record4.put("goa", "A,20,B,49,C,60");
+
+                 record4.put("Jharkhand", "A,20,B,49,C,60");
+                 record4.put("Jharkhand", "A,20,B,49,C,60");
 	        table2.add(record5);
 	        
 	        Map<String, String> record6 = new HashMap<>();
-	        record6.put("Orissa", "");
+	   record4.put("hyderbad", "A,20,B,49,C,60");
+
+                 record4.put("Jharkhand", "A,20,B,49,C,60");
+                 record4.put("Jharkhand", "A,20,B,49,C,60");
 	        table2.add(record6);
 	        
 	        
-	        if (table1.size() != table2.size()) {
+	        if (table1.size() != table2.size()) {    //need change
 	            System.out.println("table1 does not match table2");
 	            return;
 	        }
